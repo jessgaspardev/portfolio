@@ -1,11 +1,263 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Process from '../components/Process.astro';
+import Projects from '../components/Projects.astro';
+import Resume from '../components/Resume.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+	<NavBar></NavBar>
+	<Header></Header>
+	<main>
+		<section id="about">
+			<h2 class="subheading">About me</h2>
+			<p class="text">Hi! I'm Jess, a web designer focused in crafting visually stunning and user-friendly websites.</p>
+			<p class="text">My journey in web design began with a curiosity for how websites work and a desire to create something meaningful on the internet. Over the years, I've honed my skills in user interface design, front-end development, and user experience optimization.</p>
+		</section>
+		<section id="projects">
+			<h2 class="subheading">Projects</h2>
+			<div class="projects-grid">
+				<Projects
+					projectTitle="Great Seal Studios"
+					projectType="Studio Website"
+					projectLink="https://greatsealstudios.com"
+					projectImage="great-seal-studios"
+					projectImageAlt="Great Seal Studios Website"
+				></Projects>
+				<Projects
+					projectTitle="Where's The Pizza?"
+					projectType="Directory Website"
+					projectLink="https://wheresthepizza.com"
+					projectImage="wheres-the-pizza"
+					projectImageAlt="Where's The Pizza Website"
+				></Projects>
+
+			</div>
+		</section>
+		<section id="testimonials">
+			<h2 class="subheading">Testimonials</h2>
+			<div class="testimonials-container">
+				<div class="testimonial">
+					<div class="testimonial-info">
+						<div class="testimonial-photo-container">
+							<img src="images/noe.webp" alt="Noé Vona" class="testimonial-photo">
+						</div>
+						<div class="testimonial-id">
+							<p class="testimonial-name">Noé Vona</p>
+							<p class="testimonial-project-name">Creative Director at <a href="https://greatsealstudios.com" class="text-link">Great Seal Studios</a></p>
+						</div>
+					</div>
+					<div class="testimonial-text">
+						<p class="text">
+							“I don't know much about web development – but make no mistake, it is important. It's the first interaction between you and everyone else. Take my advice: you need a trustworthy and skilled coder. Fortunately, I found Jess who was able to help me and answered all my questions, as silly as they may have been. She turned the website I wanted into reality. I highly recommend her; she is a joy to work with.”
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="resume">
+			<h2 class="subheading">Resume</h2>
+			<div class="resume-container">
+				<Resume
+					resumeType="Experience"
+					resumePosition="Technical Developer & Web Engineer"
+					resumePlace="Great Seal Studios"
+					resumeDate="Feb 2025 - Present"
+				></Resume>
+				<Resume
+					resumeType="Education"
+					resumePosition="Computer Engineering"
+					resumePlace="Bachelor’s Degree at Polytechnic Institute Of Tomar"
+					resumeDate="Sep 2022 - Present"
+				></Resume>
+				<Resume
+					resumeType="Experience"
+					resumePosition="Merch & Product Designer"
+					resumePlace="Independent"
+					resumeDate="Jan 2019 - Dec 2024"
+				></Resume>
+				<Resume
+					resumeType="Experience"
+					resumePosition="Multimedia Technician & Webmaster"
+					resumePlace="Radio Hertz"
+					resumeDate="Feb 2017 - Dec 2018"
+				></Resume>
+				<Resume
+					resumeType="Education"
+					resumePosition="Multimedia Communication & Education"
+					resumePlace="Bachelor’s Degree at Polytechnic Institute Of Santarém"
+					resumeDate="Sep 2014 - Jun 2017"
+				></Resume>
+			</div>
+		</section>
+		<section id="contact">
+			<h2 class="subheading">Contact</h2>
+			<div class="contact-container">
+				<div class="contact-details">
+					<p class="text">Time For Me: <span class="time-text">05:07</span></p>
+					<p class="contact-title">Socials:</p>
+					<div class="contact-socials-container">
+						<p class="text"><img src="images/instagram.svg" alt="Instagram Icon" class="social-icon"><a href="https://instagram.com" class="text-link">Instagram</a></p>
+						<p class="text"><img src="images/twitter.svg" alt="Twitter Icon" class="social-icon"><a href="https://twitter.com/jessgdev" class="text-link">Twitter</a></p>
+						<p class="text"><img src="images/linkedin.svg" alt="Linkedin Icon" class="social-icon"><a href="https://www.linkedin.com/in/jessicadgaspar/" class="text-link">Linkedin</a></p>
+					</div>
+					
+				</div>
+				<div class="contact-email-container">
+					<p class="contact-email-title">Interested? Let's talk!</p>
+					<p class="contact-email">
+						<img src="images/email.svg" alt="email">
+						<a href="mailto:jessgaspardev@gmail.com" class="text-link">jessgaspardev@gmail.com</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer></Footer>
+</MainLayout>
+
+<style>
+	
+.subheading {
+	color: var(--accent-color);
+	font-size: 3rem;
+	font-weight: 400;
+	padding-bottom: 2rem;
+}
+
+.text:not(:last-child) {
+	padding-bottom: 1rem;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+@media (max-width: 700px) {
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+.testimonial {
+	background-color: var(--bg-container);
+	padding: 3rem;
+	border: 1px solid var(--light-border);
+	border-radius: 1rem;
+	box-shadow: var(--box-shadow);
+}
+
+.testimonial-photo-container {
+	width: 50px;
+	height: 50px;
+}
+
+.testimonial-photo {
+	width: 100%;
+	height:100%;
+	border-radius: 50px;
+}
+
+.testimonial-info {
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 2rem;
+}
+
+.testimonial-name {
+	font-weight: 600;
+	color: #fff;
+}
+
+.contact-container {
+	display: flex;
+	flex-direction: row;
+	column-gap: 10rem;
+}
+
+
+.contact-title {
+	font-size: 2rem;
+	font-family: var(--titles);
+	color: #fff;
+	margin: 2rem 0 1rem 0;
+}
+
+.contact-email-container {
+	background-color: var(--bg-container);
+	border: 1px solid var(--light-border);
+	border-radius: 1rem;
+	padding: 2rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 1.5rem;
+	box-shadow: var(--box-shadow);
+}
+
+.social-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: 1rem;
+}
+
+
+.contact-email-title {
+	font-size: 3rem;
+	font-family: var(--titles);
+	color: #fff;
+}
+
+.contact-email {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.time-text{
+	color: #fff;
+	font-weight: 500;
+}
+
+@media (max-width: 1275px) {
+	.contact-container {
+		flex-direction: column-reverse;
+	}
+
+	.contact-email-container {
+		padding: 3rem;
+		margin-bottom: 2rem;
+	}
+	
+	.contact-socials-container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+</style>
+
+<script>
+	const updateTime = () => {
+		const now = new Date();
+		const timeString = now.toLocaleTimeString('en-US', {
+			timeZone: 'Europe/Lisbon',
+			hour: '2-digit',
+			minute: '2-digit',
+			hour12: true
+		});
+		document.querySelector('.time-text').textContent = `${timeString}`;
+	}
+
+	updateTime();
+	setInterval(updateTime, 1000);
+</script>

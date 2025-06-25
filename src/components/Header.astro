@@ -1,0 +1,123 @@
+---
+import '../styles/global.css';
+---
+
+<header class="header" id="intro">
+  <div class="photo-container">
+    <img src="images/photo.jpg" alt="Jess Gaspar" class="profile-photo">
+  </div>
+  <div class="heading-container">
+    <div class="title-container">
+      <h2 class="name">Jess Gaspar</h2>
+      <h1 class="title">Web Designer & Developer</h1>
+    </div>
+    <div class="info-container">
+      <div class="location-container">
+        <img src="images/location.svg" alt="location">
+        <p class="info">Portugal</p>
+      </div>
+      <div class="available-container">
+        <div class="available-icon"></div>
+        <p class="info">Available for work</p>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+    <a href="#contact"><button class="header-button">Let's Talk!</button></a>
+  </div>
+</header>
+
+<style>
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	gap: 2rem;
+	padding: 8rem 0 3rem 0;
+	border-bottom: var(--border-bottom);
+}
+
+.heading-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.profile-photo {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	box-shadow: 5px 10px 15px rgba(243, 93, 24, 0.247);
+}
+
+.name, .title {
+	color: #fff;
+	font-weight: 400;
+}
+
+.name {
+	font-size: 2rem;
+}
+
+.title {
+	font-size: 3rem;
+}
+
+.header-button {
+	background-color: transparent;
+	border-radius: 1rem;
+	border: 2px solid #F35D18;
+	font-family: "IBM Plex Mono", monospace;
+	font-size: 1.2rem;
+	color: #fff;
+	padding: .8rem 2rem;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #F35D18;
+	-webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
+}
+
+.header-button:hover {
+	box-shadow: inset 400px 0 0 0 #F35D18;
+}
+
+.location-container, .available-container {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+
+.location-container {
+	margin-bottom: .5rem;
+}
+
+.available-icon {
+	width: .7rem;
+	height: .7rem;
+	background-color: greenyellow;
+	border-radius: 1rem;
+	margin: 0 .3rem;
+	box-shadow: 0px 0px 10px greenyellow;
+}
+
+@media (max-width: 1030px) {
+    .header {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 6rem 0 3rem 0;
+		}
+
+		.heading-container {
+			align-items: center;
+		}
+
+		.title-container {
+			text-align: center;
+		}
+  }
+
+</style>

@@ -1,0 +1,209 @@
+---
+import '../styles/global.css';
+---
+
+<nav class="nav">
+  <ul class="navbar">
+    <li class="nav-item"><a href="#intro" class="text-link">Intro</a></li>
+    <li class="nav-item"><a href="#about" class="text-link">About</a></li>
+    <li class="nav-item"><a href="#projects" class="text-link">Projects</a></li>
+    <li class="nav-item"><a href="#testimonials" class="text-link">Testimonials</a></li>
+    <li class="nav-item"><a href="#resume" class="text-link">Resume</a></li>
+    <li class="nav-item"><a href="#contact" class="text-link">Contact</a></li>
+  </ul>
+  <ul class="navbar-mobile">
+    <li class="nav-item nav-button"><img src="images/plus.svg" alt="Nav Button"></li>
+    <li class="nav-item hidden"><a href="#intro" class="text-link">Intro</a></li>
+    <li class="nav-item hidden"><a href="#about" class="text-link">About</a></li>
+    <li class="nav-item hidden"><a href="#projects" class="text-link">Projects</a></li>
+    <li class="nav-item hidden"><a href="#testimonials" class="text-link">Testimonials</a></li>
+    <li class="nav-item hidden"><a href="#resume" class="text-link">Resume</a></li>
+    <li class="nav-item hidden"><a href="#contact" class="text-link">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+
+nav {
+  width: 40%;
+  margin: 2rem auto;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: var(--bg-container);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--light-border);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  /* Add smooth transitions for background changes */
+  transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-mobile .nav-item:not(.nav-button) {
+  /* Add transitions for smooth show/hide */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.navbar-mobile .nav-item.hidden:not(.nav-button) {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Staggered animation effect */
+.navbar-mobile .nav-item:nth-child(2) { transition-delay: 0.05s; }
+.navbar-mobile .nav-item:nth-child(3) { transition-delay: 0.1s; }
+.navbar-mobile .nav-item:nth-child(4) { transition-delay: 0.15s; }
+.navbar-mobile .nav-item:nth-child(5) { transition-delay: 0.2s; }
+.navbar-mobile .nav-item:nth-child(6) { transition-delay: 0.25s; }
+.navbar-mobile .nav-item:nth-child(7) { transition-delay: 0.3s; }
+
+.nav-button {
+  background-color: var(--bg-container);
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-button.active {
+  border: 1px solid transparent;
+}
+
+.nav-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+/* Rotate the plus icon when menu is open */
+.nav-button.active img {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.nav-button img {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1400px) {
+  nav {
+    width: 60%;
+  }
+}
+
+@media (max-width: 950px) {
+  nav {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    display: none;
+  }
+
+  nav {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 1rem auto;
+  }
+}
+
+@media (min-width: 800px) {
+  .navbar-mobile {
+    display: none;
+  }
+}
+
+
+</style>
+
+<script>
+
+const toggleNavMobile = () => {
+  const navItems = document.querySelectorAll('.navbar-mobile .nav-item:not(.nav-button)');
+  const nav = document.querySelector('.nav');
+  const navButton = document.querySelector('.nav-button');
+  
+  // Check if items are currently hidden
+  const isHidden = navItems[0].classList.contains('hidden');
+  
+  if (isHidden) {
+    // Show items with staggered animation
+    navItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.remove('hidden');
+      }, index * 50); // 50ms delay between each item
+    });
+    
+    // Update nav container styling
+    nav.style.backgroundColor = 'var(--bg-container)';
+    nav.style.border = '1px solid var(--light-border)';
+    nav.style.boxShadow = 'var(--box-shadow)';
+    nav.style.padding = '1rem 2rem';
+    
+    // Add active class to button for rotation effect
+    navButton.classList.add('active');
+    
+  } else {
+    // Hide items with reverse staggered animation
+    navItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('hidden');
+      }, (navItems.length - index - 1) * 50); // Reverse order
+    });
+    
+    // Update nav container styling after animation
+    setTimeout(() => {
+      nav.style.backgroundColor = 'transparent';
+      nav.style.border = 'none';
+      nav.style.boxShadow = 'none';
+    }, 300); // Wait for animation to complete
+    
+    // Remove active class from button
+    navButton.classList.remove('active');
+  }
+}
+
+// Add event listener when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.querySelector('.nav-button');
+  toggleButton?.addEventListener('click', toggleNavMobile);
+});
+
+
+</script>

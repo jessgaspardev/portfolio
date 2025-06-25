@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+---
+
+<div class="timeline">
+
+  <div class="timeline-title title-right">
+    <p class="step-title">Discover</p>
+  </div>
+
+  <div class="timeline-container container-right">
+    <p class="text">Before we start, we determine if and how I can help you. What are your requirements for your new website? Why do you need a new website? What goals do you have, and what problems can we solve with a new website?</p>
+  </div>
+
+  <div class="timeline-container container-left">
+    <p class="text">We develop a strategy that successfully combines your goals with the needs of your target audience. Based on this concept, I create the first wireframes. This provides us with a very good impression of the website and the user interface.</p>
+  </div>
+
+  <div class="timeline-title">
+    <p class="step-title">Concept</p>
+  </div>
+
+  <div class="timeline-title title-right">
+    <p class="step-title">Design</p>
+  </div>
+
+  <div class="timeline-container container-right">
+    <p class="text">Based on the previously concept, I create a high-end screen design perfectly tailored to your brand. A web design that sets you apart from your competition, fits your target audience ideally, and provides an excellent user experience.</p>
+  </div>
+
+  <div class="timeline-container container-left">
+    <p class="text">In this step, we breathe life into your new high-end design. You will receive a custom-built website where I code every line to ensure maximum speed and security.</p>
+  </div>
+
+  <div class="timeline-title">
+    <p class="step-title">Development</p>
+  </div>
+
+  <div class="timeline-title title-right">
+    <p class="step-title">Launch</p>
+  </div>
+
+  <div class="timeline-container container-right">
+    <p class="text">Congrats! Your website is ready to go live! I will provide hosting and I offer monthly maintenance and updates so you never have to worry about the tech side of things.</p>
+  </div>
+
+  </div>
+
+
+<style>
+  .step-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
+  }
+
+  .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15rem;
+    row-gap: 5rem;
+    counter-reset: timeline-counter;
+  }
+
+  .timeline::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: var(--light-border);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+  }
+
+  .timeline-container {
+    position: relative;
+    background-color: var(--bg-container);
+    padding: 2rem 3rem;
+    border: 1px solid var(--light-border);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 20px rgba(243, 93, 24, 0.247);
+    counter-increment: timeline-counter;
+  }
+  .timeline-container.container-left::after,
+  .timeline-container.container-right::after {
+    content: counter(timeline-counter);
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: calc(50% - 1.5rem);
+    background-color: var(--bg-container);
+    border: 1px solid var(--light-border);
+    border-radius: 3rem;
+    z-index: 1;
+    box-shadow: 0px 0px 20px rgba(243, 93, 24, 0.247);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+
+  .timeline-container.container-left::after {
+      right: -9rem;
+  }
+
+  .timeline-container.container-right::after {
+      left: -9rem;
+  }
+
+  .timeline-title.title-right > .step-title {
+      text-align: right;
+  }
+
+</style>

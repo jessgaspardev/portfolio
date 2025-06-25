@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+const { resumeType, resumePosition, resumePlace, resumeDate } = Astro.props;
+---
+
+<div class="resume-entry">
+  <div class="resume-type-container">
+    <p class="resume-type">{resumeType}</p>
+  </div>
+  <div class="resume-info">
+    <div class="resume-titles-container">
+      <p class="resume-position">{resumePosition}</p>
+      <p class="resume-place">{resumePlace}</p>
+    </div>
+    <div class="resume-date-container">
+      <p class="resume-date">{resumeDate}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .resume-entry {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--accent-color);
+  }
+
+  .resume-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 800px) {
+    .resume-info {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  .resume-type {
+    color: var(--light-border);
+    padding-bottom: 1rem;
+  }
+
+  .resume-position {
+    font-family: var(--titles);
+    color: #fff;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+</style>
