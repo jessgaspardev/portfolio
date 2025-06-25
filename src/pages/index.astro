@@ -139,7 +139,7 @@ import Footer from '../components/Footer.astro';
 	gap: 2rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 	.projects-grid {
 		grid-template-columns: 1fr;
 	}
@@ -153,6 +153,7 @@ import Footer from '../components/Footer.astro';
 	border-radius: 1rem;
 	box-shadow: var(--box-shadow);
 }
+
 
 .testimonial-photo-container {
 	width: 50px;
@@ -174,6 +175,24 @@ import Footer from '../components/Footer.astro';
 .testimonial-name {
 	font-weight: 600;
 	color: #fff;
+}
+
+@media (max-width: 800px) {
+	.testimonial {
+		padding: 2rem;
+	}
+
+	.testimonial-info {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.testimonial-id, .testimonial-text {
+		text-align: center;
+	}
+
 }
 
 .contact-container {
@@ -215,6 +234,7 @@ import Footer from '../components/Footer.astro';
 	font-size: 3rem;
 	font-family: var(--titles);
 	color: #fff;
+	line-height: 120%;
 }
 
 .contact-email {
