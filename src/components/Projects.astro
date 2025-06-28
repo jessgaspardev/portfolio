@@ -8,8 +8,13 @@ const  { projectImage, projectImageAlt, projectTitle, projectLink, projectType }
       <img src=`images/${projectImage}.png` alt=`${projectImageAlt}` class="project-image">
     </div>
     <div class="project-info">
-      <p class="project-title">{projectTitle}</p>
-      <p class="project-type">{projectType}</p>
+      <div class="project-titles">
+        <p class="project-title">{projectTitle}</p>
+        <p class="project-type">{projectType}</p> 
+      </div>
+      <div class="project-arrow">
+        <img src="images/arrow.svg" alt="Arrow Icon">
+      </div>
     </div>
 </div>
 </a>
@@ -38,14 +43,34 @@ const  { projectImage, projectImageAlt, projectTitle, projectLink, projectType }
     transition: transform 0.3s ease;
   }
 
-  .project-container:hover .project-image {
-  	transform: scale(1.05);
-  }
-
-
-
   .project-info {
   	padding: 2.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-arrow {
+    border: 1px solid var(--light-border);
+    border-radius: 2rem;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .project-container:hover .project-arrow {
+    transform: rotate(-30deg);
+    border: 1px solid var(--accent-color);
+  }
+
+  .project-container:hover .project-title {
+    color: var(--accent-color);
+  }
+
+  .project-container:hover .project-image {
+  	transform: scale(1.05);
   }
 
   .project-title {
@@ -65,4 +90,6 @@ const  { projectImage, projectImageAlt, projectTitle, projectLink, projectType }
   .project-text-link:hover {
     color: #fff;
   }
+
+
 </style>
