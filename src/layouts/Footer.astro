@@ -1,0 +1,21 @@
+<footer>
+    <p class="footer-text">Jess Gaspar &copy; <span id="copyright-year">{new Date().getFullYear().toString()}</span> | All Rights Reserved | Website built with <a target="_blank" rel="noopener noreferrer" href="https://astro.build">Astro</a> 🚀❤️</p>
+</footer>
+
+<style>
+    footer {
+        position: absolute;
+        bottom: 24px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .footer-text {
+        font-size: 14px;
+    }
+</style>
+
+<script>
+    const copyrightYear = document.querySelector("#copyright-year") as unknown as HTMLSpanElement;
+    copyrightYear.textContent = new Date().getFullYear().toString();
+</script>

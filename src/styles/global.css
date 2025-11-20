@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+    --background-color: #0D1117;
+    --title-color: #EC8E2C;
+    --link-color: #79C0FF;
+    --accent-color: #D2A8FF;
+    --text-color: #B3BAC2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-color);
+}
+
+h2 {
+    font-size: 20px;
+}
+
+a {
+    color: var(--link-color);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--title-color);
+}
+
+p, li {
+    color: var(--text-color);
+    line-height: 150%;
+    font-size: 14px;
+}
+
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

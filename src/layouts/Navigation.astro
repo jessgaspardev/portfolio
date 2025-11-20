@@ -1,0 +1,41 @@
+---
+const navLinks = [
+	{ title: "Home", href: "/" },
+	{ title: "Projects", href: "/projects" },
+	{ title: "About", href: "/about" },
+	{ title: "Now", href: "/now" },
+	{ title: "Tools", href: "/tools" },
+	{ title: "Art", href: "/art" },
+	{ title: "Contact", href: "/contact" }
+]
+---
+
+<nav>
+	<span class="logo">Jess Gaspar</span>
+	<ul>
+		{navLinks.map((link) => (<li><a href={link.href}>{link.title}</a></li>))}
+	</ul>
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding: 24px 0;
+	}
+
+	.logo {
+		font-size: 20px;
+		font-weight: 800;
+		color: var(--title-color);
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 8px;
+		column-gap: 24px;
+		list-style: none;
+	}
+</style>

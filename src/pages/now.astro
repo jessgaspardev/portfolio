@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+---
+
+<Layout title="Now" heading="What I have been up to lately 🕰️">
+    <p><a target="_blank" rel="noopener noreferrer" href="https://nownownow.com/about">What is this page?</a></p>
+    <section class="update">
+        <h2>November 2025</h2>
+        <ul>
+            <li>Seeing Microsoft’s attempt to push AI slop down our throats with Windows 11 finally made me switch to <Link href="https://linuxmint.com" text="Linux" variant="newWindow"/> as my operating system and I couldn’t be happier :);</li>
+            <li>I’ve been using <Link href="https://astro.build" text="Astro" variant="newWindow" /> to build websites for a while now (and I absolutely love it!) but I’m taking Chris Pennington’s Astro course to go deeper in my knowledge of this framework;</li>
+            <li>I’m working on building this website you’re currently reading;</li>
+            <li>Also started planning a new project I want to build in near future;</li>
+            <li>Trying to get out of my reading slump but it’s been difficult to focus on any book lately... but I need to read Frankenstein by Mary Shelley, especially now after watching Guillermo Del Toro’s film;</li>
+            <li>Both my PS5 controllers have stick drift (lucky me...) and I don’t want to spend money on a new one right now, so I’m only playing PS4 games at the moment which led me to replay Dark Souls 2, and damn, it really is amazing (I know that’s a hot take but it shouldn’t be!);</li>
+        </ul>
+    </section>
+</Layout>
+
+<style>
+    h2 {
+        font-size: 20px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+</style>

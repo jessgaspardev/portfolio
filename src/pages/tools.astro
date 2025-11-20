@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+---
+
+<Layout title="Tools" heading="Tools I like to use 🔨">
+    <p>These are the tools and software I like to use in my daily work, personal ventures and entertainment. I like to use and support open source software as much as possible.</p>
+    <section class="tools">
+        <h2>Hardware</h2>
+        <ul>
+            <li><Link href="https://www.hp.com/ie-en/gaming-pc/laptops/2020-omen-15-intel.html" text="Laptop" variant="newWindow" /> - My laptop is an HP Omen 15 and it has served me well these past three years both for work and gaming.</li>
+            <li><Link href="https://aoc.com/us/gaming/products/monitors/24g2" text="Monitor" variant="newWindow"/> - I use a 24 inch AOC monitor but I can't remember the exact one, I just know I got it on a cheap budget.</li>
+            <li><Link href="https://ajazzstore.com/products/ajazz-ak820?variant=42723206103093" text="Keyboard" variant="newWindow" /> - I use the Ajazz AK820 mechanical keyboard and I absolutely love it, it's has a great quality-price ratio. Nothing like a good click clack typing sound to help with productivity!</li>
+        </ul>
+        <h2>Software</h2>
+        <ul>
+            <li><Link href="https://linuxmint.com" text="Linux Mint" variant="newWindow" /> (Open Source) - I finally dropped Windows and now use Linux as my new OS. I couldn't be happier with this choice. I'm using Mint as my Linux distro as it was really beginner friendly for a Windows user and looks nice.</li>
+            <li><Link href="https://code.visualstudio.com/" text="Visual Studio Code" variant="newWindow" /> (Open Source) - For now I'm still using VS Code as my IDE even though I'm growing increasingly annoyed with it, but the extensions I use are too helpful in my workflow to go back to something like Notepad++, and I don't have the patience right now to learn Vim, but maybe in the future.</li>
+            <li><Link href="https://figma.com/" text="Figma" variant="newWindow" /> - I start with FigJam as my whiteboard to plan out the structure and design, and then I use Figma to design all my websites. I would like to find a good open source alternative to this that I could use locally on my laptop, if you know any, <Link href="/contact" text="let me know" />! :)</li>
+            <li><Link href="https://astro.build" text="Astro" variant="newWindow" /> (Open Source) - My love for Astro knows no bounds. When I was really demotivated and making websites and coding just wasn't fun anymore, I discovered this framework and it brought back joy and desire for me to keep working in this field.</li>
+        </ul>
+        <h2>Non-work tools</h2>
+        <ul>
+            <li><Link href="https://krita.org" text="Krita" variant="newWindow" /> (Open Source) - I enjoy making <Link href="/art" text="art" /> as a hobby and I love using Krita to create digital oil paintings, this is an amazing open source software that more digital artists should use in my opinion.</li>
+        </ul>
+    </section>
+</Layout>
+
+<style>
+    h2 {
+        font-size: 20px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+</style>
