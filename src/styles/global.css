@@ -9,11 +9,11 @@
 }
 
 :root {
-    --background-color: #0D1117;
-    --title-color: #EC8E2C;
-    --link-color: #79C0FF;
-    --accent-color: #D2A8FF;
-    --text-color: #B3BAC2;
+    --background-color: #1C1C1D;
+    --title-color: #DA885A;
+    --link-color: #7AC7B2;
+    --accent-color: #FF668E;
+    --text-color: #D4CEBD;
 }
 
 h1, h2, h3, h4, h5, h6 {
