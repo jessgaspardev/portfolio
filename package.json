@@ -9,6 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.9"
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/sometype-mono": "^5.2.7",
+    "@fontsource/fusion-pixel-12px-proportional-sc": "^5.2.5",
+    "@fontsource/jacquard-12": "^5.2.8",
+    "@fontsource/jacquard-24": "^5.2.8",
+    "@fontsource/jersey-15": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.9",
+    "tailwindcss": "^4.1.17"
   }
 }

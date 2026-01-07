@@ -1,0 +1,35 @@
+---
+// stylesheet
+import "../styles/global.css";
+import "../styles/markdown.css"
+
+// components
+import Header from '../components/global/Header.astro';
+import Footer from "../components/global/Footer.astro";
+
+// assets
+import '@fontsource-variable/jetbrains-mono';
+import '@fontsource/jersey-15';
+import '@fontsource/jacquard-24';
+
+
+const { pageTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="box-border">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>Jess Gaspar Web Developer - {pageTitle}</title>
+</head>
+
+<body class="bg-light min-h-screen flex flex-col justify-between items-center w-full">
+    <main class="flex flex-col items-center w-full">
+        <Header />
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>

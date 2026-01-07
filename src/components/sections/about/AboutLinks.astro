@@ -1,0 +1,26 @@
+---
+// components
+import CardLink from "../../../components/elements/CardLink.astro";
+
+// assets
+import resume from "../../../assets/icons/resume.png";
+import now from "../../../assets/icons/now.png";
+import art from "../../../assets/icons/art.png";
+import connect from "../../../assets/icons/contacticon.png";
+
+
+// content
+const aboutLinks = [
+    { href: "/resume", title: "Resume", img: resume, description: "My experience and education" },
+    { href: "/now", title: "Now", img: now, description: "What I've been up lately" },
+    { href: "/connect", title: "Connect", img: connect, description: "Get in touch!" },
+    { href: "/art", title: "Art", img: art, description: "My paintings and sketches" },
+]
+---
+<div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+    {
+        aboutLinks.map((link) => (
+            <CardLink href={link.href} title={link.title} img={link.img} description={link.description} />
+        ))
+    }
+</div>

@@ -1,0 +1,18 @@
+---
+// components
+import Text from "./Text.astro"
+import Link from "./Link.astro"
+
+// props
+const { name, position, place, words } = Astro.props
+---
+
+<div class="max-w-[900px]">
+    <div class="mb-6">
+        <Text variant={'md'} class="font-bold">{name}</Text>
+        <Text variant={'sm'}>{position} at <Link variant={'inline'} href="https://greatsealstudios.com" newWindow>{place}</Link></Text>
+    </div>
+    <div>
+        <Text variant={'sm'}>{words}</Text>
+    </div>
+</div>

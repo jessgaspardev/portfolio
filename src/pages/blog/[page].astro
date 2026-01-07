@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Main.astro"
+
+// Components
+import Container from "../../components/elements/Container.astro";
+import Heading from "../../components/elements/Heading.astro";
+import Text from "../../components/elements/Text.astro";
+import FormattedDate from "../../components/elements/FormattedDate.astro";
+
+// Routing
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async () => {
+    const posts = await getCollection("blog", ({data}) => !data.isDraft)
+    return posts.map((post) => ({
+        params: {
+            page: post.data.slug,
+        },
+        props: {
+            post,
+        }
+    }));
+}) satisfies GetStaticPaths;
+
+// props
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, category, publishedDate } = post.data;
+---
+
+<Layout pageTitle={title}>
+    <Container class="flex flex-col gap-16 items-center max-w-[700px]">
+        <div>
+            <Heading tagName="h1" tagSize="h4" class="text-center mb-4">{title}</Heading>
+            <div class="flex flex-row justify-between">
+                <Text variant={'xsm'}><FormattedDate publishedDate={publishedDate} /></Text>
+                <Text variant={'xsm'}>{category}</Text>
+            </div>    
+        </div>
+        
+        <article class="markdown-content">
+            <Content />
+        </article>    
+    </Container>
+
+</Layout>

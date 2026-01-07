@@ -1,0 +1,21 @@
+---
+// components
+import Text from "../../elements/Text.astro";
+// content collections
+import { getEntry } from "astro:content";
+import { render } from "astro:content";
+const latestUpdate = await getEntry('blog', 'now-nov-2025');
+const { Content } = await render(latestUpdate);
+
+const { title } = latestUpdate.data
+
+
+
+---
+
+<section aria-label="Latest Update">
+    <Text variant={'md'} class="mb-8">{title}</Text>
+    <article class="markdown-content">
+        <Content />
+    </article>
+</section>

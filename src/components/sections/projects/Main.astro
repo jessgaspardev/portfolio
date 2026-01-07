@@ -1,0 +1,21 @@
+---
+// assets
+import gss from '../../../assets/icons/gss.png';
+import astro from '../../../assets/icons/astro.png';
+// components
+import CardLink from "../../elements/CardLink.astro";
+
+
+const projects = [
+    { href:"https://greatsealstudios.com", title: "Great Seal Studios", img: gss, description: "Gaming Studio Website" },
+    { href:"/", title: "Astral Themes (Soon)", img: astro, description: "Website Themes for small businesses" },
+]
+---
+
+<div class="grid md:grid-cols-2 sm:grid-cols-1 mt-6 gap-4">
+    {
+        projects.map((project) => (
+            <CardLink href={project.href} title={project.title} img={project.img} description={project.description} />
+        ))
+    }
+</div>

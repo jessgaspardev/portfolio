@@ -1,0 +1,12 @@
+---
+//components
+import Text from "../../elements/Text.astro";
+
+// props
+const { position, place, date } = Astro.props;
+---
+<div class="flex flex-col w-full">
+    <Text variant={'md'}>{position}</Text>
+    <Text variant={'sm'}>{place}</Text>
+    <Text variant={'xsm'}>{date}</Text>
+</div>

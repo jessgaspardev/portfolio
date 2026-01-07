@@ -1,0 +1,26 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Text from "../../elements/Text.astro";
+import Link from "../../elements/Link.astro";
+import SocialIcon from "../../elements/SocialIcon.astro";
+import Heading from "../../elements/Heading.astro";
+
+//icons
+import bluesky from "../../../assets/icons/bluesky.png";
+import github from "../../../assets/icons/github.png";
+import mail from "../../../assets/icons/mail.png";
+---
+
+<Container class="flex flex-col justify-center items-center gap-12 max-w-[850px] text-center">
+    <Heading tagName="h1" tagSize="h4" class="max-w-[600px]">Welcome to my home on the World Wide Web</Heading>
+    <Text variant={'sm'}>
+        Hey, I'm Jess! 👋 I’m a web developer working from Portugal. Currently, I'm collaborating with <Link variant={'inline'} href="https://greatsealstudios.com" newWindow>Great Seal Studios</Link>, while working on solo projects. I’m an advocate for remote work and open-source software.
+        When I’m not working, I like to sketch and paint, play video games, watch basketball, and read fantasy/sci-fi books.
+    </Text>
+    <div class="flex flex-row gap-3">
+        <SocialIcon src={bluesky} alt="BlueSky" href="https://bsky.app/profile/gasparjs.bsky.social"/>
+        <SocialIcon src={github} alt="Github" href="https://github.com/jessgaspardev"/>
+        <SocialIcon src={mail} alt="E-Mail" href="mailto:jessgaspardev@gmail.com"/>
+    </div>
+</Container>

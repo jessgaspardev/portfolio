@@ -1,0 +1,37 @@
+---
+// layout
+import Layout from "../../layouts/Main.astro"
+
+// content collections
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+export const getStaticPaths = (async ({paginate}) => {
+    const posts = await getCollection('blog', ({data}) => !data.isDraft && data.category === "Now")
+    return paginate(posts.sort((a,b) => new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()), {pageSize: 12});
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+
+// components
+import Container from "../../components/elements/Container.astro"
+import Heading from "../../components/elements/Heading.astro"
+import Link from "../../components/elements/Link.astro"
+import Latest from "../../components/sections/now/Latest.astro"
+import BlogCard from "../../components/elements/BlogCard.astro";
+---
+
+<Layout pageTitle="Now">
+    <Container class="flex flex-col gap-16 items-center">
+        <div class="text-center">
+            <Heading tagName="h1" tagSize="h2" class="mb-8">What I have been up to lately</Heading>
+            <Link href="https://nownownow.com/about" variant={'inline'} newWindow>(What is this page?)</Link>    
+        </div>
+        <div class="max-w-[700px]">
+            <Latest />
+        </div>
+        <section aria-label="Previous updates">
+            <Heading tagName="h2" tagSize="h6" class="mb-8">Previous updates:</Heading>
+            {page.data.map((post) => <BlogCard post={post} />)}
+        </section>
+    </Container>
+</Layout>

@@ -1,0 +1,33 @@
+---
+// assets
+import projects from "../../../assets/icons/projectsicon.png";
+import connect from "../../../assets/icons/contacticon.png";
+import resume from "../../../assets/icons/resume.png";
+import now from "../../../assets/icons/now.png";
+import art from "../../../assets/icons/art.png";
+
+
+// components
+import Heading from "../../elements/Heading.astro";
+import Container from "../../elements/Container.astro";
+import CardLink from "../../elements/CardLink.astro";
+
+const cardLinks = [
+    { href: "/projects", title: "Projects", img: projects, description: "Work and other fun things" },
+    { href: "/resume", title: "Resume", img: resume, description: "My experience and education" },
+    { href: "/now", title: "Now", img: now, description: "What I've been up to recently" },
+    { href: "/art", title: "Art", img: art, description: "My paintings and sketches" },
+    { href: "/connect", title: "Connect", img: connect, description: "Get in touch" }
+]
+---
+
+<Container>
+    <Heading tagName="h2" tagSize="h4" class="text-center">Quick Links:</Heading>
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-6 gap-4">
+        {
+            cardLinks.map((card) => (
+                <CardLink href={card.href} title={card.title} img={card.img} description={card.description} />
+            ))
+        }
+    </div>
+</Container>

@@ -1,36 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import picture from "../assets/images/aboutpic.jpg"
+// layout
+import Layout from "../layouts/Main.astro";
+
+// components
+import Container from "../components/elements/Container.astro";
+import AboutText from "../components/sections/about/AboutText.astro";
+import AboutLinks from "../components/sections/about/AboutLinks.astro";
+
 ---
 
-<Layout title="About" heading="About Me 🤠">
-    <div class="picture">
-        <img src={picture.src} alt="Jess Gaspar">
-    </div>
-    <section class="text">
-        <p>Hi, I’m <strong>Jess</strong> (she/her)! A web designer and developer born and raised in Portugal 🇵🇹. I’m a nerd who has been building and breaking websites since I was a kid in the early 2000s. I wrote my first lines of HTML and CSS code to customize my MySpace profile, and that planted the coding bug in me at an early age. I moved on to build entire fan sites for my favorite artists in Wordpress, and eventually started coding my own websites from scratch.</p>
-        <p>I’ve always been passionate about various types of media and art, which has led through different roles in my career. I worked at my local radio station fresh off college, where I had to manage the entire multimedia department (I was the multimedia department!), which involved filming, editing videos and audio, and (most relatable to this portfolio) maintaining and updating the radio’s website.</p>
-        <p>After that I started working independently as a merch and product designer, where I learned a lot about building online stores, content creation, and optimizing websites for SEO.</p>
-        <p>Currently, I’m working for a new indie game studio as a web engineer and also taking my first steps into the world of game development! And I’m finishing my second bachelor’s degree in Computer Engineering.</p>
-        <p class="subtitle">Non-work related fun facts:</p>
-        <ul>
-            <li>I might be the only developer in the world who doesn't like coffee ☕;</li>
-            <li>Instead, I can’t work without a cup of green tea 🍵;</li>
-            <li>I have 2 cats 🐈, 1 dog 🐕 and 1 goat 🐐;</li>
-            <li>I like to play video games (mostly RPGs and souls games) and read books (mostly fantasy and sci-fi);</li>
-            <li>I started learning how to draw and paint last year 🎨;</li>
-            <li>I’m a WNBA fan (go Aces!) 🏀;</li>
-        </ul>
-    </section>
+<Layout pageTitle = "About">
+    <Container>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-8 items-start">
+            <AboutText />
+            <AboutLinks />
+        </div>
+    </Container>
 </Layout>
-
-<style>
-    img {
-        width: 150px;
-        height: 150px;
-    }
-
-    .subtitle {
-        color: var(--accent-color);
-    }
-</style>

@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+// components
+import Link from "./Link.astro";
+import Text from "./Text.astro";
+import FormattedDate from "./FormattedDate.astro";
+
+type Props = {
+    post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+const { title, slug, category, publishedDate } = post.data
+---
+
+<article aria-label={title}>
+    <div>
+        <Text variant={'md'} class="font-bold"><Link href=`blog/${slug}` variant={'inline'}>{title}</Link></Text>
+        <Text variant={'xsm'}><FormattedDate publishedDate={publishedDate}> - {category}</Text>
+    </div>
+</article>

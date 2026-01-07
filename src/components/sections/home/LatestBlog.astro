@@ -1,0 +1,11 @@
+---
+// components
+import Heading from "../../elements/Heading.astro";
+import Container from "../../elements/Container.astro";
+import BlogPostsList from "../../elements/BlogPostsList.astro";
+---
+
+<Container>
+    <Heading tagName="h2" tagSize="h4" class="text-center mb-14">Latest words from me:</Heading>
+    <BlogPostsList limit={3} />
+</Container>

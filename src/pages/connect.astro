@@ -1,0 +1,32 @@
+---
+import Container from "../components/elements/Container.astro"
+import Heading from "../components/elements/Heading.astro"
+import Text from "../components/elements/Text.astro"
+import Layout from "../layouts/Main.astro"
+import Link from "../components/elements/Link.astro"
+import SocialIcon from "../components/elements/SocialIcon.astro";
+
+//icons
+import bluesky from "../assets/icons/bluesky.png";
+import github from "../assets/icons/github.png";
+import mail from "../assets/icons/mail.png";
+import storygraph from "../assets/icons/storygraph.png";
+import letterboxd from "../assets/icons/letterboxd.png";
+import backloggd from "../assets/icons/backloggd.png";
+---
+
+<Layout pageTitle="Connect">
+    <Container class="text-center flex flex-col items-center gap-16 max-w-[900px]">
+        <Heading tagName="h1" tagSize="h2">Where You Can Find Me</Heading>
+        <Text variant={'md'}>If you'd like to get in touch with me you can email me at <Link href="mailto:jessgaspardev@gmail.com" variant={'inline'}>jessgaspardev@gmail.com</Link></Text>
+        <div class="flex flex-row gap-3">
+            <SocialIcon src={bluesky} alt="BlueSky" href="https://bsky.app/profile/gasparjs.bsky.social"/>
+            <SocialIcon src={github} alt="Github" href="https://github.com/jessgaspardev"/>
+            <SocialIcon src={mail} alt="E-Mail" href="mailto:jessgaspardev@gmail.com"/>
+            <SocialIcon src={storygraph} alt="Storygraph" href="https://app.thestorygraph.com/profile/gasparjs"/>
+            <SocialIcon src={letterboxd} alt="Letterboxd" href="https://letterboxd.com/lilygladstone/"/>
+            <SocialIcon src={backloggd} alt="Backloggd" href="https://backloggd.com/u/moonpresence/"/>
+        </div>
+
+    </Container>
+</Layout>

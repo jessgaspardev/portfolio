@@ -1,0 +1,58 @@
+---
+// components
+import ResumeItem from "./ResumeItem.astro";
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+
+const experience = [
+    { position: "Web Engineer & Technical Developer", date: "Feb 2025 - Present", place: "Great Seal Studios" },
+    { position: "Product & Merch Designer", date: "Jan 2019 - Dec 2024", place: "Independent" },
+    { position: "Webmaster & Multimedia Technician", date: "Feb 2017 - Dec 2018", place: "Radio Hertz" }
+]
+
+const education = [
+    { position: "Computer Engineering", date: "Sep 2022 - Present", place: "Bachelor's degree" },
+    { position: "Multimedia Communication & Education", date: "Sep 2014 - Jun 2017", place: "Bachelor's degree" }
+]
+
+const skills = [
+    { name: "HTML" },
+    { name: "CSS" },
+    { name: "JavaScript" },
+    { name: "Tailwind" },
+    { name: "Astro" },
+    { name: "Figma" },
+    { name: "Framer" },
+    { name: "Wordpress" },
+]
+---
+
+
+<section class="grid md:grid-cols-2 grid-cols-1 gap-16">
+    <Heading tagName="h2" tagSize="h3">Experience</Heading>
+    <div class='flex flex-col gap-8'>
+        {
+            experience.map((entry) => (
+                <ResumeItem position={entry.position} date={entry.date} place={entry.place} />
+            ))
+        }
+    </div>
+    <Heading tagName="h2" tagSize="h3">Education</Heading>
+    <div class='flex flex-col gap-8'>
+        {
+            education.map((entry) => (
+                <ResumeItem position={entry.position} date={entry.date} place={entry.place} />
+            ))
+        }
+    </div>
+    <Heading tagName="h2" tagSize="h3">Skills</Heading>
+    <div class='flex flex-col gap-4'>
+        {
+            skills.map((entry) => (
+                <Text variant={'sm'}>{entry.name}</Text>
+            ))
+        }
+    </div>
+</section>
+
+

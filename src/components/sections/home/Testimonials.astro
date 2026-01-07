@@ -1,0 +1,21 @@
+---
+// components
+import Heading from "../../elements/Heading.astro";
+import Container from "../../elements/Container.astro";
+import TestimonialCard from "../../elements/TestimonialCard.astro";
+
+const testimonials = [
+    { name: "Noé Vona", position: "Creative Director", place: "Great Seal Studios", words: "I don't know much about web development – but make no mistake, it is important. It's the first interaction between you and everyone else. Take my advice: you need a trustworthy and skilled coder. Fortunately, I found Jess who was able to help me and answered all my questions, as silly as they may have been. She turned the website I wanted into reality. I highly recommend her; she is a joy to work with." }
+]
+---
+
+<Container>
+    <Heading tagName="h2" tagSize="h4" class="text-center mb-14">Nice words from clients:</Heading>
+    <section class="">
+        {
+            testimonials.map((card) => (
+                <TestimonialCard name={card.name} position={card.position} place={card.place} words={card.words} />
+            ))
+        }
+    </section>
+</Container>

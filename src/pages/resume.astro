@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Main.astro"
+
+//components
+import Container from "../components/elements/Container.astro"
+import ResumeSection from "../components/sections/about/Resume.astro";
+import Heading from "../components/elements/Heading.astro";
+---
+
+<Layout pageTitle="Resume">
+    <Container class="flex flex-col gap-16">
+        <Heading tagName="h1" tagSize="h1" class="text-center">Resume</Heading>
+        <ResumeSection />
+    </Container>
+</Layout>

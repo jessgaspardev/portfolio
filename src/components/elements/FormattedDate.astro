@@ -1,0 +1,17 @@
+---
+import { undefined } from 'astro:schema';
+
+type Props = {
+    publishedDate: Date;
+}
+
+const { publishedDate } = Astro.props
+---
+
+<time datetime={publishedDate.toISOString()}>
+    {
+        publishedDate.toLocaleDateString(undefined, {
+            dateStyle: "long",
+        })
+    }
+</time>

@@ -1,0 +1,13 @@
+---
+import Text from "../elements/Text.astro"
+import Link from "../elements/Link.astro"
+---
+<footer class="md:p-12 p-7 font-text text-12 flex flex-col gap-3 text-center">
+    <Text variant={'xsm'}>No genAI was used in the making of this website - All art and icons were badly drawn with my own human hand :)</Text>
+    <Text variant={'xsm'}>Jess Gaspar &copy; <span id="copyright-year">{new Date().getFullYear().toString()}</span> | All Rights Reserved | Built with <Link href="https://astro.build" variant={'inline'} newWindow>Astro</Link></Text>
+</footer>
+
+<script>
+    const copyrightYear = document.querySelector("#copyright-year") as unknown as HTMLSpanElement;
+    copyrightYear.textContent = new Date().getFullYear().toString();
+</script>

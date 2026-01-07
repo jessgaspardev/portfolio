@@ -1,0 +1,25 @@
+---
+import BlogCard from "../elements/BlogCard.astro";
+
+// content collections
+import { getCollection } from "astro:content";
+
+const blog = await getCollection("blog");
+
+type Props = {
+    limit?: number;
+}
+
+const { limit } = Astro.props;
+---
+<section>
+    { limit ?
+        blog.slice(0,limit).map((post) => (
+            <BlogCard post={post} />
+        ))
+        :
+        blog.map((post) => (
+            <BlogCard post={post} />
+        ))
+    }
+</section>

@@ -1,0 +1,21 @@
+---
+// assets
+import dnd from '../../../assets/icons/d20.png';
+
+// components
+import CardLink from "../../elements/CardLink.astro";
+
+
+const projects = [
+    { href:"https://easy-dnd-rolls.pages.dev", title: "Easy DnD Rolls", img: dnd, description: "DnD Dice Roller App" },
+
+]
+---
+
+<div class="grid sm:grid-cols-1 mt-6 gap-4">
+    {
+        projects.map((project) => (
+            <CardLink href={project.href} title={project.title} img={project.img} description={project.description} />
+        ))
+    }
+</div>

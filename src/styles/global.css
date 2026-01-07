@@ -1,48 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
 
-*,
-*::before,
-*::after {
-    margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+
+@font-face {
+    font-family: Pixelcastle;
+    font-style: normal;
+    src: url("../assets/fonts/Pixelcastle.woff2") format("woff2");
 }
 
-:root {
-    --background-color: #1C1C1D;
-    --title-color: #DA885A;
-    --link-color: #7AC7B2;
-    --accent-color: #FF668E;
-    --text-color: #D4CEBD;
-}
+@theme {
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--title-color);
-}
+    /* FONTS */
+    --font-logo: "Pixelcastle", system-ui;
+    --font-title: 'Jersey 15', system-ui;
+    --font-text: 'JetBrains Mono Variable', monospace;
+    --font-link: "Pixelcastle", system-ui;
 
-h2 {
-    font-size: 20px;
-}
+    /* COLORS */
+    --color-light: #fff;
+    --color-dark: #000;
+    --color-accent: #93F5DA;
 
-a {
-    color: var(--link-color);
-    font-weight: 600;
-}
+    /* TEXT SIZES */
+    --text-80: 5rem;
+    --text-72: 4.5rem;
+    --text-64: 4rem;
+    --text-56: 3.5rem;
+    --text-48: 3rem;
+    --text-40: 2.5rem;
+    --text-32: 2rem;
+    --text-24: 1.5rem;
+    --text-20: 1.25rem;
+    --text-16: 1rem;
+    --text-12: 0.75rem;
 
-a:hover {
-    color: var(--title-color);
-}
-
-p, li {
-    color: var(--text-color);
-    line-height: 150%;
-    font-size: 14px;
-}
-
-
-
-section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    /* BREAKPOINTS */
+    --breakpoint-xsm: 320px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1200px;
+    --breakpoint-xl: 1440px;
 }

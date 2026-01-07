@@ -1,0 +1,35 @@
+---
+// assets
+import { Image } from "astro:assets";
+import img1 from "../../../assets/art/1.jpeg";
+import img2 from "../../../assets/art/2.jpeg";
+import img3 from "../../../assets/art/3.jpeg";
+import img4 from "../../../assets/art/4.jpeg";
+import img5 from "../../../assets/art/5.jpeg";
+import img6 from "../../../assets/art/6.jpeg";
+import img7 from "../../../assets/art/7.jpeg";
+import img8 from "../../../assets/art/8.jpeg";
+import img9 from "../../../assets/art/9.jpg";
+
+const artworks = [
+    { img: img1, alt: "Vicar Amelia from Bloodborne" },
+    { img: img2, alt: "Street at night" },
+    { img: img3, alt: "No Man's Sky space station" },
+    { img: img4, alt: "Messmer's snake" },
+    { img: img5, alt: "Enemy from Clair Obscur Expedition 33" },
+    { img: img6, alt: "Gwyndolin from Dark Souls" },
+    { img: img7, alt: "Sci-fi landspace with Earth in the background" },
+    { img: img8, alt: "A yellow forest" },
+    { img: img9, alt: "Still life" },
+
+]
+---
+<section class="gap-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4">
+        {
+            artworks.map((artwork) => (
+                <div class="mb-4">
+                    <Image class="w-full h-auto" src={artwork.img} alt={artwork.alt} />   
+                </div>
+            ))
+        }
+</section>

@@ -1,0 +1,22 @@
+---
+const navLinks = [
+    { title: "Projects", href: "/projects" },
+    { title: "About", href: "/about"},
+    { title: "Blog", href: "/blog" },
+    { title: "Connect", href: "/connect"},
+]
+---
+
+<nav>
+    <ul class="flex flex-row gap-6">
+        {
+            navLinks.map((link) => (
+                <li class="flex flex-col gap-2 text-center">
+                    <a href={link.href} class='group'>
+                        <span class="text-dark font-title md:text-24 text-16 uppercase group-hover:underline bg-none group-hover:bg-accent">{link.title}</span>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
