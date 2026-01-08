@@ -16,7 +16,7 @@ const { title, slug, category, publishedDate } = post.data
 
 <article aria-label={title}>
     <div>
-        <Text variant={'md'} class="font-bold"><Link href=`blog/${slug}` variant={'inline'}>{title}</Link></Text>
+        <Text variant={'md'} class="font-bold"><Link href=`/blog/${slug}` variant={'inline'}>{title}</Link></Text>
         <Text variant={'xsm'}><FormattedDate publishedDate={publishedDate}> - {category}</Text>
     </div>
 </article>
