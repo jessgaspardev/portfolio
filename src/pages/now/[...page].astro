@@ -31,7 +31,7 @@ import BlogCard from "../../components/elements/BlogCard.astro";
         </div>
         <section aria-label="Previous updates">
             <Heading tagName="h2" tagSize="h6" class="mb-8">Previous updates:</Heading>
-            {page.data.map((post) => <BlogCard post={post} />)}
+            {page.data.slice(1).map((post) => <BlogCard post={post} />)}
         </section>
     </Container>
 </Layout>

@@ -3,15 +3,11 @@ import Layout from "../layouts/Main.astro";
 import Container from "../components/elements/Container.astro";
 import Heading from "../components/elements/Heading.astro";
 import MainProjects from "../components/sections/projects/Main.astro";
-import ForFun from "../components/sections/projects/ForFun.astro";
 ---
 
 <Layout pageTitle="Projects">
     <Container class="flex flex-col items-center text-center gap-16">
         <Heading tagName="h1" tagSize="h1">Projects</Heading>
-        <Heading tagName="h2" tagSize="h3">Main Work</Heading>
         <MainProjects />
-        <Heading tagName="h2" tagSize="h3">Experiments and other things</Heading>
-        <ForFun />
     </Container>
 </Layout>

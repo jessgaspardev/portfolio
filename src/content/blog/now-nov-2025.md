@@ -1,5 +1,5 @@
 ---
-title: "Latest Update - November 2025"
+title: "What I'm Up To Now - November 2025"
 slug: "now-nov-2025"
 category: "Now"
 description: "What I've been up to most recently"

@@ -4,7 +4,7 @@ import Text from "../../elements/Text.astro";
 // content collections
 import { getEntry } from "astro:content";
 import { render } from "astro:content";
-const latestUpdate = await getEntry('blog', 'now-nov-2025');
+const latestUpdate = await getEntry('blog', 'now-jan-2026');
 const { Content } = await render(latestUpdate);
 
 const { title } = latestUpdate.data

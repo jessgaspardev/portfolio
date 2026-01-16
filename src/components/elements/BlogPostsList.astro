@@ -10,15 +10,19 @@ type Props = {
     limit?: number;
 }
 
+const sortedBlog = blog.sort((a, b) => 
+  new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
+);
+
 const { limit } = Astro.props;
 ---
 <section>
     { limit ?
-        blog.slice(0,limit).map((post) => (
+        sortedBlog.slice(0,limit).map((post) => (
             <BlogCard post={post} />
         ))
         :
-        blog.map((post) => (
+        sortedBlog.map((post) => (
             <BlogCard post={post} />
         ))
     }
