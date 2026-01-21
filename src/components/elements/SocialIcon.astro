@@ -5,5 +5,5 @@ const {src, alt, href} = Astro.props;
 ---
 
 <a href={href} target="_blank" rel="noopener noreferrer" class="bg-none hover:bg-accent rounded p-2">
-  <Image src={src} alt={alt} width={40} height="40" />  
+  <Image src={src} alt={alt} width={40} height="40" densities={[1.5,2]}/>  
 </a>
