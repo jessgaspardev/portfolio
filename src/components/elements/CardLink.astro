@@ -3,12 +3,14 @@
 import { Image } from "astro:assets";
 import Text from "./Text.astro";
 
+
 // props
-const {href, title, img, description} = Astro.props;
+const { href, title, img, description, newWindow } = Astro.props;
 ---
 <div class="p-4 bg-none group">
-    <a href=`${href}` class="flex flex-col items-center gap-4 ">
-        <Image src={img} alt="" width={200} height={200} densities={[1.5,2]}/>
+    <a href=`${href}` class="flex flex-col items-center gap-4 " target={newWindow ? "_blank" : undefined}
+    rel={newWindow ? "noopener noreferrer" : undefined}>
+        <Image src={img} alt="" height={200} densities={[1.5,2]}/>
         <div class="text-center">
             <span class="font-link text-24 text-dark">{title}</span>
             <Text variant={'sm'} class="group-hover:bg-accent group-hover:underline">{description}</Text>

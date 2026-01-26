@@ -1,21 +1,23 @@
 ---
 // assets
-import gss from '../../../assets/icons/gss.png';
-import dnd from '../../../assets/icons/d20.png';
+import gss from '../../../assets/images/gss.png';
+import dnd from '../../../assets/images/edr.png';
+import us from '../../../assets/images/us.png';
 // components
 import CardLink from "../../elements/CardLink.astro";
 
 
 const projects = [
     { href:"https://greatsealstudios.com", title: "Great Seal Studios", img: gss, description: "Gaming Studio Website" },
+    { href:"https://unearthedshelf.com", title: "Unearthed Shelf", img: us, description: "Classic Sci-Fi Books" },
     { href:"https://easy-dnd-rolls.pages.dev", title: "Easy DnD Rolls", img: dnd, description: "DnD Dice Roller App" },
 ]
 ---
 
-<div class="grid md:grid-cols-2 sm:grid-cols-1 mt-6 gap-4">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-4">
     {
         projects.map((project) => (
-            <CardLink href={project.href} title={project.title} img={project.img} description={project.description} />
+            <CardLink href={project.href} title={project.title} img={project.img} description={project.description} newWindow />
         ))
     }
 </div>

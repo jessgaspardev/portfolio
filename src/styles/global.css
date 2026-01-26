@@ -16,9 +16,9 @@
     --font-link: "Pixelcastle", system-ui;
 
     /* COLORS */
-    --color-light: #fff;
-    --color-dark: #000;
-    --color-accent: #93F5DA;
+    --color-light: #EFE9E3;
+    --color-dark: #212121;
+    --color-accent: #D0DDD0;
 
     /* TEXT SIZES */
     --text-80: 5rem;
