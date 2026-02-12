@@ -10,8 +10,16 @@ import img6 from "../../../assets/art/6.jpeg";
 import img7 from "../../../assets/art/7.jpeg";
 import img8 from "../../../assets/art/8.jpeg";
 import img9 from "../../../assets/art/9.jpg";
+import godzilla from "../../../assets/art/godzilla.jpg";
+import bird from "../../../assets/art/birb.jpg";
+import drangleic from "../../../assets/art/drangleic.jpg";
+import monument from "../../../assets/art/monument.jpg";
 
 const artworks = [
+    { img: godzilla, alt: "Godzilla (1954)" },
+    { img: bird, alt: "Bird" },
+    { img: drangleic, alt: "Drangleic castle from Dark Souls 2" },
+    { img: monument, alt: "Monument" },
     { img: img1, alt: "Vicar Amelia from Bloodborne" },
     { img: img2, alt: "Street at night" },
     { img: img3, alt: "No Man's Sky space station" },
@@ -21,14 +29,13 @@ const artworks = [
     { img: img7, alt: "Sci-fi landspace with Earth in the background" },
     { img: img8, alt: "A yellow forest" },
     { img: img9, alt: "Still life" },
-
 ]
 ---
 <section class="gap-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4">
         {
             artworks.map((artwork) => (
                 <div class="mb-4">
-                    <Image class="w-full h-auto" src={artwork.img} alt={artwork.alt} />   
+                    <Image class="w-full h-auto" src={artwork.img} alt={artwork.alt} width={500} />   
                 </div>
             ))
         }
